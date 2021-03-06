@@ -1,4 +1,4 @@
-package main;
+package arrayDS;
 
 // Algorithms and Data structures page 67
 public class ClassDataArray {

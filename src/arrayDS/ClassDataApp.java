@@ -1,4 +1,4 @@
-package main;
+package arrayDS;
 
 public class ClassDataApp {
 
