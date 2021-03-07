@@ -28,8 +28,8 @@ public class ArrayBub {
 	public void display() {
 		for (int i = 0; i < nElems; i++) {
 			System.out.print(a[i] + " "); 
-			System.out.println(" ");
 		}
+		System.out.println(" ");
 	}
 	
 //	swap algorithm
