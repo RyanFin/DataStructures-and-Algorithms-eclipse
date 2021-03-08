@@ -1,5 +1,7 @@
 package insertionSortA;
 
+import bubbleSortA.ArrayBub;
+
 public class InsertionSortApp {
 
 	public static void main(String[] args) {
@@ -28,16 +30,31 @@ public class InsertionSortApp {
 		arr.insert(100);
 		arr.insert(101);
 		
-		System.out.println("--- Before InsertionSort ---");
-		arr.display();
+//		System.out.println("--- Before InsertionSort ---");
+//		arr.display();
+//		
+//		arr.insertionSort();
+//		
+//		System.out.println("--- After InsertionSort ---");
+//		arr.display();
+//		
+//		System.out.println("get element 2: " + arr.getElem(2));
+//		System.out.println("length: " + arr.length());
 		
-		arr.insertionSort();
+		int expMaxSize = 100000;
+		ArrayIns expArr = new ArrayIns(expMaxSize);
 		
-		System.out.println("--- After InsertionSort ---");
-		arr.display();
+		for (int i = 0; i < expMaxSize; i++) {
+			long n = (long)(java.lang.Math.random() * (expMaxSize - 1));
+			expArr.insert(n);
+		}
+
+		System.out.println("Display elems before sort");
+		expArr.display();
 		
-		System.out.println("get element 2: " + arr.getElem(2));
-		System.out.println("length: " + arr.length());
+		expArr.insertionSort();
+		System.out.println("Display elems after sort");
+		expArr.display();
 
 	}
 

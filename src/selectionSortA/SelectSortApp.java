@@ -1,5 +1,6 @@
 package selectionSortA;
 
+import bubbleSortA.ArrayBub;
 import selectionSortA.*;
 
 public class SelectSortApp {
@@ -30,16 +31,31 @@ public class SelectSortApp {
 		arr.insert(100);
 		arr.insert(101);
 		
-		System.out.println("--- Before SelectionSort ---");
-		arr.display();
+//		System.out.println("--- Before SelectionSort ---");
+//		arr.display();
+//		
+//		arr.selectionSort();
+//		
+//		System.out.println("--- After SelectionSort ---");
+//		arr.display();
+//		
+//		System.out.println("get element 2: " + arr.getElem(2));
+//		System.out.println("length: " + arr.length());
 		
-		arr.selectionSort();
+		int expMaxSize = 100000;
+		ArraySel expArr = new ArraySel(expMaxSize);
 		
-		System.out.println("--- After SelectionSort ---");
-		arr.display();
+		for (int i = 0; i < expMaxSize; i++) {
+			long n = (long)(java.lang.Math.random() * (expMaxSize - 1));
+			expArr.insert(n);
+		}
+
+		System.out.println("Display elems before sort");
+		expArr.display();
 		
-		System.out.println("get element 2: " + arr.getElem(2));
-		System.out.println("length: " + arr.length());
+		expArr.selectionSort();
+		System.out.println("Display elems after sort");
+		expArr.display();
 
 	}
 
