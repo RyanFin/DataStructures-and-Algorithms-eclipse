@@ -28,17 +28,35 @@ public class BubbleSortApp {
 		arr.insert(100);
 		arr.insert(101);
 		
-		System.out.println("--- Before BubbleSort ---");
-		arr.display();
+//		System.out.println("--- Before BubbleSort ---");
+//		arr.display();
+//		
+//		arr.bubbleSort();
 		
-		arr.bubbleSort();
+//		System.out.println("--- After BubbleSort ---");
+//		arr.display();
 		
-		System.out.println("--- After BubbleSort ---");
-		arr.display();
+//		System.out.println("get element 2: " + arr.getElem(2));
+//		System.out.println("length: " + arr.length());
 		
-		System.out.println("get element 2: " + arr.getElem(2));
-		System.out.println("length: " + arr.length());
+		System.out.println("-----  Experiments  -----");
+		
+		int expMaxSize = 100000;
+		ArrayBub expArr = new ArrayBub(expMaxSize);
+		
+		for (int i = 0; i < expMaxSize; i++) {
+			long n = (long)(java.lang.Math.random() * (expMaxSize - 1));
+			expArr.insert(n);
+		}
 
+		System.out.println("Display elems before sort");
+		expArr.display();
+		
+		expArr.bubbleSort();
+		System.out.println("Display elems after sort");
+		expArr.display();
+		
+		
 	}
 
 }
