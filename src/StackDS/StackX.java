@@ -1,4 +1,4 @@
-package StackDS;
+package stackDS;
 
 public class StackX {
 	private int maxSize;
