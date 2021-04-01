@@ -74,6 +74,17 @@ package linkedListDS;
 	        
 	        return head;
 	    }
+	    
+	    static SinglyLinkedListNode insertNodeAtHead(SinglyLinkedListNode llist, int data) {
+	        
+	        // Create a new node 
+	        SinglyLinkedListNode newNode = new SinglyLinkedListNode(data);
+
+	        newNode.next = llist;
+
+	        return newNode;
+	    }
+
 
 	    private static final Scanner scanner = new Scanner(System.in);
 
