@@ -1,0 +1,115 @@
+import java.io.*;
+import java.math.*;
+import java.text.*;
+import java.util.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    static class SinglyLinkedListNode {
+        public int data;
+        public SinglyLinkedListNode next;
+
+        public SinglyLinkedListNode(int nodeData) {
+            this.data = nodeData;
+            this.next = null;
+        }
+    }
+
+    static class SinglyLinkedList {
+        public SinglyLinkedListNode head;
+        public SinglyLinkedListNode tail;
+
+        public SinglyLinkedList() {
+            this.head = null;
+            this.tail = null;
+        }
+
+        public void insertNode(int nodeData) {
+            SinglyLinkedListNode node = new SinglyLinkedListNode(nodeData);
+
+            if (this.head == null) {
+                this.head = node;
+            } else {
+                this.tail.next = node;
+            }
+
+            this.tail = node;
+        }
+    }
+
+    public static void printSinglyLinkedList(SinglyLinkedListNode node, String sep, BufferedWriter bufferedWriter) throws IOException {
+        while (node != null) {
+            bufferedWriter.write(String.valueOf(node.data));
+
+            node = node.next;
+
+            if (node != null) {
+                bufferedWriter.write(sep);
+            }
+        }
+    }
+
+    // Complete the compareLists function below.
+
+    /*
+     * For your reference:
+     *
+     * SinglyLinkedListNode {
+     *     int data;
+     *     SinglyLinkedListNode next;
+     * }
+     *
+     */
+    static boolean compareLists(SinglyLinkedListNode head1, SinglyLinkedListNode head2) {
+        
+        SinglyLinkedListNode curr1 = head1;
+        SinglyLinkedListNode curr2 = head2;
+        
+        ArrayList<Integer> arr1 = new ArrayList<Integer>();
+        ArrayList<Integer> arr2 = new ArrayList<Integer>();
+        
+        while (curr1 != null){
+            arr1.add(curr1.data);
+            curr1 = curr1.next;
+        }
+        
+        while (curr2 != null){
+            arr2.add(curr2.data);
+            curr2 = curr2.next;
+        }
+        
+        // checks 
+        if (arr1.size() != arr2.size()){
+            return false;
+        } else{
+            
+        System.out.println("---- arr1 ----");
+        
+        for (int i = 0; i < arr1.size(); i++){
+            System.out.print(" " + arr1.get(i) + " ");
+        }
+        
+        System.out.println(" ");
+        
+        
+        System.out.println("---- arr2 ----");
+        for(int i = 0; i < arr2.size(); i++){
+            System.out.print(" " + arr2.get(i) + " ");
+        }
+        
+        System.out.println(" ");
+        // compare the elements in both arrays
+        for (int i = 0 ; i < arr1.size(); i++){
+            if (arr1.get(i) != arr2.get(i)){
+                return false;
+            } 
+            return true;
+        }
+            
+        }
+        
+        return true;
+    }
+
+    private static final Scanner scanner = new Scanner(System.in);
